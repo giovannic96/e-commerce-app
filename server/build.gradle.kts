@@ -40,6 +40,16 @@ dependencies {
     testImplementation("org.assertj:assertj-core:$assertjVersion")
 }
 
+tasks.jar {
+    manifest.attributes["Main-Class"] = "com.tw.ApplicationKt"
+    val dependencies = configurations
+        .runtimeClasspath
+        .get()
+        .map(::zipTree)
+    from(dependencies)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 tasks.test {
     useJUnitPlatform()
 }
