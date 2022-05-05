@@ -7,8 +7,9 @@ import io.ktor.server.routing.*
 fun Application.configureRouting() {
 
     routing {
-        get("/") {
-            call.respondText("Hello World!")
+        get("/api/v1/items") {
+            println("I'm in!")
+            call.respondText("{txt: 'Hello World!'}")
         }
     }
 }

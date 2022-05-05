@@ -28,6 +28,7 @@ dependencies {
     implementation("io.ktor:ktor-server-default-headers-jvm:$ktorVersion")
     implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-server-cors:$ktorVersion")
     //implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
     //implementation("org.slf4j:slf4j-simple:1.7.36")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
