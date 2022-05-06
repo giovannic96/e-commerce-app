@@ -11,6 +11,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://jitpack.io") }
 }
 
 val ktorVersion by extra { "2.0.1" }
@@ -20,6 +21,7 @@ val guavaVersion by extra { "31.1-jre" }
 val junitVersion by extra { "5.8.2" }
 val assertjVersion by extra { "3.22.0" }
 val jsonUnitAssertjVersion by extra { "2.32.0" }
+val esKotlinClientVersion by extra { "1.1.9" }
 
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
@@ -29,8 +31,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
     implementation("io.ktor:ktor-server-cors:$ktorVersion")
-    //implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
-    //implementation("org.slf4j:slf4j-simple:1.7.36")
+    implementation("com.github.jillesvangurp:es-kotlin-client:$esKotlinClientVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("com.google.guava:guava:$guavaVersion")
 
