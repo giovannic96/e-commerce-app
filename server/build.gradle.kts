@@ -18,6 +18,7 @@ val ktorVersion by extra { "2.0.1" }
 val logbackVersion by extra { "1.2.11" }
 val mockkVersion by extra { "1.12.3" }
 val guavaVersion by extra { "31.1-jre" }
+val jacksonVersion by extra { "2.13.2" }
 val junitVersion by extra { "5.8.2" }
 val assertjVersion by extra { "3.22.0" }
 val jsonUnitAssertjVersion by extra { "2.32.0" }
@@ -34,6 +35,7 @@ dependencies {
     implementation("com.github.jillesvangurp:es-kotlin-client:$esKotlinClientVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("com.google.guava:guava:$guavaVersion")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
 
     testImplementation(kotlin("test"))
     testImplementation("io.mockk:mockk:$mockkVersion")

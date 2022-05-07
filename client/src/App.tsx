@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {API_BASE_URL} from "./constants";
 
 function App() {
 
-	const baseURL = process.env.NODE_ENV === 'production' ? "api/v1/items" : "http://localhost:8081/api/v1/items"
+	//const baseURL = process.env.NODE_ENV === 'production' ? "api/v1" : "http://localhost:8081/api/v1"
 
 	useEffect(() => {
-		fetch(baseURL)
+		fetch(`${API_BASE_URL}/items`)
 			.then(response => response.json())
 			.then(data => {
 				console.log(data)
@@ -28,7 +29,7 @@ function App() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Learn React
+					Learn React!
 				</a>
 			</header>
 		</div>

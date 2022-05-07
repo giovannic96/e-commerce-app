@@ -1,6 +1,7 @@
 # Do not save the application built into Git
 **/build
 .idea
+.env
 .gradle
 .DS_Store
 
