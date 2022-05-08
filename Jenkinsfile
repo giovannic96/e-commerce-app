@@ -19,11 +19,17 @@ pipeline {
       }
     }
 
+    stage("Prune Docker data") {
+        steps {
+            sh 'docker system prune -a --volumes -f'
+        }
+    }
+
     stage('Start containers') {
-      steps {
-        sh 'docker-compose up -d --no-color --wait'
-        sh 'docker-compose ps'
-      }
+        steps {
+            sh 'docker-compose up -d --no-color --wait'
+            sh 'docker-compose ps'
+        }
     }
   }
 }
