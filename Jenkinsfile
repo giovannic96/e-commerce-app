@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Cloning Git') {
-        steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/giovannic96/e-commerce-app.git']]])
-        }
-    }
-
     stage("Verify tooling") {
       steps {
         sh '''
@@ -17,6 +11,12 @@ pipeline {
           java -version
         '''
       }
+    }
+
+    stage('Cloning Git') {
+        steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/giovannic96/e-commerce-app.git']]])
+        }
     }
 
     stage("Prune Docker data") {
