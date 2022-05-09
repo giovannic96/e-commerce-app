@@ -2,6 +2,6 @@
 
 Technologies:
 
-Backend     -> Kotlin (Ktor)
-Frontend    -> React (Typescript) 
-Persistence -> Elasticsearch
+Backend     -> Kotlin (Ktor) <br />
+Frontend    -> React (Typescript) <br />
+Persistence -> Elasticsearch <br />
