@@ -14,34 +14,27 @@ repositories {
     maven { url = uri("https://jitpack.io") }
 }
 
-val ktorVersion by extra { "2.0.1" }
-val logbackVersion by extra { "1.2.11" }
-val mockkVersion by extra { "1.12.3" }
-val guavaVersion by extra { "31.1-jre" }
-val jacksonVersion by extra { "2.13.2" }
-val junitVersion by extra { "5.8.2" }
-val assertjVersion by extra { "3.22.0" }
-val jsonUnitAssertjVersion by extra { "2.32.0" }
-val esKotlinClientVersion by extra { "1.1.9" }
-
 dependencies {
-    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-netty-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-status-pages-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-default-headers-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-    implementation("io.ktor:ktor-server-cors:$ktorVersion")
-    implementation("com.github.jillesvangurp:es-kotlin-client:$esKotlinClientVersion")
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
-    implementation("com.google.guava:guava:$guavaVersion")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
+    implementation("io.ktor:ktor-server-core-jvm:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-server-netty-jvm:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-server-status-pages-jvm:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-server-default-headers-jvm:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-server-content-negotiation:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-server-cors:${project.properties["ktor_version"]}")
+    implementation("com.github.jillesvangurp:es-kotlin-client:${project.properties["es_kotlin_client_version"]}")
+    implementation("ch.qos.logback:logback-classic:${project.properties["logback_version"]}")
+    implementation("com.google.guava:guava:${project.properties["guava_version"]}")
+    implementation("io.ktor:ktor-client-core:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-client-content-negotiation:${project.properties["ktor_version"]}")
+    implementation("io.ktor:ktor-client-serialization:${project.properties["ktor_version"]}")
 
     testImplementation(kotlin("test"))
-    testImplementation("io.mockk:mockk:$mockkVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
-    testImplementation("net.javacrumbs.json-unit:json-unit-assertj:$jsonUnitAssertjVersion")
-    testImplementation("org.assertj:assertj-core:$assertjVersion")
+    testImplementation("io.ktor:ktor-server-test-host:${project.properties["ktor_version"]}")
+    testImplementation("io.mockk:mockk:${project.properties["mockk_version"]}")
+    testImplementation("org.junit.jupiter:junit-jupiter:${project.properties["junit_version"]}")
+    testImplementation("net.javacrumbs.json-unit:json-unit-assertj:${project.properties["jsonunit_assertj_version"]}")
+    testImplementation("org.assertj:assertj-core:${project.properties["assertj_version"]}")
 }
 
 tasks.jar {

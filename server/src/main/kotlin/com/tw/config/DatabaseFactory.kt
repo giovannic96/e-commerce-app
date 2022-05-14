@@ -1,4 +1,4 @@
-package com.tw.dao
+package com.tw.config
 
 import com.tw.exception.DbInitException
 import org.elasticsearch.client.RestHighLevelClient
